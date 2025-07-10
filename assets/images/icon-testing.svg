@@ -1,0 +1,5 @@
+<!-- Save as: icon-testing.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#FFD700">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M8 6H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-3M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M8 6h8M9 12h6m-6 4h3" />
+</svg>
