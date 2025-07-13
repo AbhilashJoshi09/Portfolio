@@ -1,31 +1,49 @@
-name: Deploy to EC2
+name: Deploy Portfolio to EC2
 
 on:
   push:
-    branches:
-      - main  # Change this to your deployment branch
+    branches: [ main, master ]
+  workflow_dispatch: # Allow manual trigger
 
 jobs:
   deploy:
-    name: Deploy Portfolio on EC2
+    name: Deploy to EC2
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
 
-      - name: Deploy over SSH
-        run: |
-          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            cd ${{ secrets.PROJECT_PATH }}
-            git pull origin main
-            # Optional: build or restart web server if needed
-            echo "Deployment complete."
-          EOF
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Build Portfolio
+      run: npm run build
+
+    - name: Deploy to EC2 via SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        script: |
+          echo "Starting Portfolio deployment..."
+          cd /var/www/portfolio
+          ./deploy.sh
+          echo "Portfolio deployment completed!"
+
+    - name: Notify Deployment Status
+      if: always()
+      run: |
+        if [ ${{ job.status }} == 'success' ]; then
+          echo "Portfolio deployed successfully!"
+        else
+          echo "Portfolio deployment failed!"
+        fi
