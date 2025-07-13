@@ -12,7 +12,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Install Nginx
-echo " Installing Nginx..."
+echo "Installing Nginx..."
 sudo apt install nginx -y
 
 # Install additional tools
@@ -51,9 +51,9 @@ sudo tee /var/www/html/health.html > /dev/null <<EOF
 </html>
 EOF
 
-echo " EC2 instance setup completed!"
-echo " Next steps:"
+echo "EC2 instance setup completed!"
+echo "Next steps:"
 echo "1. Add your SSH public key to ~/.ssh/authorized_keys"
 echo "2. Configure GitHub repository secrets:"
-echo "   - EC2_HOST:, EC2_USERNAME:,EC2_SSH_KEY:
+echo "   - EC2_HOST, EC2_USERNAME, EC2_SSH_KEY"
 echo "3. Push code to trigger deployment!"
