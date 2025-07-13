@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <!-- icon-cloud.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#FFD700">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M3 15a4 4 0 004 4h10a4 4 0 10-.9-7.9A5 5 0 003 15z" />
 </svg>
+=======
+<!-- icon-cloud.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#FFD700">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M3 15a4 4 0 004 4h10a4 4 0 10-.9-7.9A5 5 0 003 15z" />
+</svg>
+>>>>>>> e9dc94aed5f6403f14a6c016f714ea6db5a5c7a2

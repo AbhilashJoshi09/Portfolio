@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <!-- icon-automation.svg or icon-devops.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#FFD700">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
     d="M12 15l3.5-3.5M12 9l-3.5 3.5M4 4v5h5M20 20v-5h-5M4 15v5h5M20 9V4h-5" />
 </svg>
+=======
+<!-- icon-automation.svg or icon-devops.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#FFD700">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M12 15l3.5-3.5M12 9l-3.5 3.5M4 4v5h5M20 20v-5h-5M4 15v5h5M20 9V4h-5" />
+</svg>
+>>>>>>> e9dc94aed5f6403f14a6c016f714ea6db5a5c7a2
